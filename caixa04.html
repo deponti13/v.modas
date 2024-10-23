@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Grouping Tags</title>
+    <script src="caixa04.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+        }
+
+        nav {
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        header {
+            padding: 5px;
+            background-color: white;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            margin-top: 100px;
+            padding-bottom: 80px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            margin-left: 175px;
+            text-align: center;
+            padding: 5px;
+            width: 50%;
+            box-shadow: 2px 2px 2px;
+            border-radius: 20px;
+        }
+
+        a:hover {
+            color: rgb(132, 132, 132);
+            transition: 0.3s all;
+        }
+
+        footer {
+            background-color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 50px;
+            position: relative; /* Remove o fixo */
+        }
+
+        main {
+            margin-top: 50px;
+            text-align: center;
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        .carrossel {
+            box-shadow: 2px 2px 2px black;
+            overflow: hidden;
+            height: 300px;
+            width: 1500px;
+            margin: 0 auto; /* Centraliza o carrossel */
+            margin-bottom: 50px; /* Espaçamento abaixo do carrossel */
+        }
+
+        .container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        img{
+            object-fit: cover;
+            height: 300px;
+            width: 500px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .navbar img{
+            width: 1450px; /* ou defina uma largura fixa, como '500px' */
+            height: 300px; /* ajusta a altura automaticamente mantendo a proporção */
+            
+            
+        }
+
+        .divulgacao img{
+
+            width: 400px; /* ou defina uma largura fixa, como '500px' */
+            height: 600px; /* ajusta a altura automaticamente mantendo a proporção */
+
+        }
+
+        .texto1 h1 {
+    font-size: 36px;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+        .divulgacao-texto {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    border-radius: 5px 80px 80px 80px;
+    height: 100px; /* Altura definida para garantir a centralização vertical */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+        .vendas-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+            background-color: #fafafa;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 220px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Aumenta o card em 5% */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra durante o hover */
+        }
+
+        .card button:hover {
+            background-color: #e91e63;
+        }
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #e91e63;
+        }
+
+        .comodevolver{
+            text-align: center;
+            column-count: 4;  
+            column-gap: normal;          
+        }
+
+
+        ion-icon {
+        font-size: 40px;
+        }
+
+        
+
+        
+
+     
+      
+    </style>
+</head>
+<body>
+    <header>
+        <h1>V.MODA</h1>
+        <nav>
+            <a href="">INICIO</a>
+            <a href="">CONTATO</a>
+            <a href="">COMO FUNCIONA</a>
+            <a href="">ACESSORIOS</a>
+            <ion-icon name="bag-handle-outline"></ion-icon>
+        </nav>
+       
+    </header>
+    
+    <!-- Div para o espaçamento branco -->
+    <div class="spacer"></div>
+    
+    <main>
+        <div class="carrossel">
+            <div class="container" id="img">
+                <img src="/img/foto5.jpg" alt="">
+                <img src="/img/fotonova2.png" alt="">
+                <img src="/img/foto3.jpg" alt="">
+                <img src="/img/foto4.jpg" alt="">
+                <img src="/img/foto5.jpg" alt="">
+                <img src="/img/fotonova2.png" alt="">
+                <img src="/img/foto3.jpg" alt="">
+                <img src="/img/foto4.jpg" alt="">
+                <img src="/img/foto5.jpg" alt="">
+                <img src="/img/fotonova2.png" alt="">
+                <img src="/img/foto3.jpg" alt="">
+                <img src="/img/foto4.jpg" alt="">
+            </div>
+        </div>
+    </main>
+
+    <div class="vendas">
+        <h3>Produtos em Destaque</h3>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <div class="navbar">
+                <img src="/img/freepik-export-20240905001352iHWC.jpeg" alt="">
+            </div>
+       </div>
+    </div>
+
+    <div class="divulgacao-texto">
+        <div class="texto1">
+            <h1>A ESCOLHA PERFEITA <br> PARA AS MADRINHAS</h1>
+        </div>
+    </div>
+
+    <section class="vendas-section">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="/img/foto.png" alt="Vestido 1">
+            <div class="card-content">
+                <h2>Vestido Floral</h2>
+                <p>R$ 299,99</p>
+                <button onclick="comprar()">Alugar</button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="/img/foto7.png" alt="Vestido 2">
+            <div class="card-content">
+                <h2>Vestido Elegante</h2>
+                <p>R$ 399,99</p>
+                <button onclick="comprar()">Alugar</button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="/img/foto8.png" alt="Vestido 3">
+            <div class="card-content">
+                <h2>Vestido de Festa</h2>
+                <p>R$ 499,99</p>
+                <button onclick="comprar()">Alugar</button>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="/img/foto.png" alt="Vestido 1">
+            <div class="card-content">
+                <h2>Vestido Floral</h2>
+                <p>R$ 299,99</p>
+                <button onclick="comprar()">Alugar</button>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+            <img src="/img/foto7.png" alt="Vestido 2">
+            <div class="card-content">
+                <h2>Vestido Elegante</h2>
+                <p>R$ 399,99</p>
+                <button onclick="comprar()">Alugar</button>
+            </div>
+        </div>
+</section>
+
+<div class="divulgacao-texto">
+    <div class="texto1">
+        <h1>OS MAIS ALUGADOS </h1>
+    </div>
+</div>
+
+<section class="vendas-section">
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="/img/foto.png" alt="Vestido 1">
+        <div class="card-content">
+            <h2>Vestido Floral</h2>
+            <p>R$ 299,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="/img/foto7.png" alt="Vestido 2">
+        <div class="card-content">
+            <h2>Vestido Elegante</h2>
+            <p>R$ 399,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="/img/foto8.png" alt="Vestido 3">
+        <div class="card-content">
+            <h2>Vestido de Festa</h2>
+            <p>R$ 499,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <img src="/img/foto.png" alt="Vestido 1">
+        <div class="card-content">
+            <h2>Vestido Floral</h2>
+            <p>R$ 299,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <img src="/img/foto7.png" alt="Vestido 2">
+        <div class="card-content">
+            <h2>Vestido Elegante</h2>
+            <p>R$ 399,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+</section>
+
+
+<div class="divulgacao-texto">
+    <div class="texto1">
+        <h1> ACESSÓRIOS </h1>
+    </div>
+</div>
+
+
+
+<section class="vendas-section">
+    <!-- Card 1 -->
+    <div class="card">
+        <img src="/img/1.png" alt="Vestido 1">
+        <div class="card-content">
+            <h2>Vestido Floral</h2>
+            <p>R$ 299,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <img src="/img/2.png" alt="Vestido 2">
+        <div class="card-content">
+            <h2>Vestido Elegante</h2>
+            <p>R$ 399,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <img src="/img/3.png" alt="Vestido 3">
+        <div class="card-content">
+            <h2>Vestido de Festa</h2>
+            <p>R$ 499,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <img src="/img/4.png" alt="Vestido 1">
+        <div class="card-content">
+            <h2>Vestido Floral</h2>
+            <p>R$ 299,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <img src="/img/5.png" alt="Vestido 2">
+        <div class="card-content">
+            <h2>Vestido Elegante</h2>
+            <p>R$ 399,99</p>
+            <button onclick="comprar()">Alugar</button>
+        </div>
+    </div>
+</section>
+
+<video src=""></video>
+
+<h1>COMO ALUGAR?</h1>
+
+
+<section class="comodevolver">
+
+
+    <ul>
+        <ul>ALUGUE</ul>
+    </ul>
+    <ul>
+        <ul>RECEBA</ul>
+    </ul>
+    <ul>
+        <ul>ARRASE</ul>
+    </ul>
+    <ul>
+        <ul>DEVOLVA</ul>
+    </ul>
+
+</section>
+   
+   
+    <footer>
+        <p>Desenvolvido por Ahmad Deponti</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
